@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 题目标题：
+
+        将两个整型数组按照升序合并，并且过滤掉重复数组元素。
+        输出时相邻两数之间没有空格。 -->
+    <!-- 输入描述:
+输入说明，按下列顺序输入：
+1 输入第一个数组的个数
+2 输入第一个数组的数值
+3 输入第二个数组的个数
+4 输入第二个数组的数值
+
+
+
+输出描述:
+输出合并之后的数组 -->
+    <script>
+      let firstArrNum = '3'
+      let firstArr = '1 2 5'
+      let secondArrNum = '4'
+      let secondArr = '-1 0 3 2'
+      function twoArr(firstArrNum, firstArr, secondArrNum, secondArr) {
+        let arr = []
+        let arr1 = firstArr.split(' ')
+        let arr2 = secondArr.split(' ')
+        console.log(arr1, arr2)
+        if (arr1.length === parseInt(firstArrNum)) {
+          arr.push(arr1)
+        }
+        if (arr2.length === parseInt(secondArrNum)) {
+          arr.push(arr2)
+        }
+        const arrObject = new Set(arr)
+        arr = Array.from(arrObject)
+        arr.sort((a, b) => a - b)
+        const stringOfArr = arr.join('')
+        console.log(arr)
+        return stringOfArr
+      }
+      let str = twoArr(firstArrNum, firstArr, secondArrNum, secondArr)
+      console.log(str)
+    </script>
+  </body>
+</html>
